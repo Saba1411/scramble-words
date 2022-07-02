@@ -26,6 +26,14 @@
     </section>
     
     <script>
+        if (document.addEventListener) 
+        {
+        document.addEventListener('contextmenu', function (e) { e.preventDefault();}, false);
+        } 
+        else 
+        {
+        document.attachEvent('oncontextmenu', function () { window.event.returnValue =  false;});
+        }   
         const msg=document.querySelector('.msg');
         const guess=document.querySelector('input');
         const btn =document.querySelector('.btn');
